@@ -63,13 +63,19 @@ class WP_TF_Shortcodes {
 	public function tf_shortcode( $atts, $content='' ) {
 		// Save $atts.
 		$the_atts = shortcode_atts( array(
-		        'l' => '/',
-		        't' => '_blank',
-		        'r' => 'WPCouple',
-		        'c' => '',
+		        'l' => '/', 		// link.
+		        't' => '_blank',	// target.
+		        'r' => 'WPCouple',	// referral.
+		        'b' => true,			// button
+		        'c' => '',			// button color.
 		    ), $atts );
+
+		// Clean the URL.
 		$url = strtok( $the_atts['l'], '?');
-		return '<a class="shortbutton large ' . $the_atts['c'] . '" rel="nofollow" href="' . $url . '?ref=' . $the_atts['r'] . '" target="' . $the_atts['t'] . '">' . $content . '</a>';
+
+		// Is it a button?
+		$is_btn = true == $the_atts['b'] ? 'shortbutton large' : '';
+		return '<a class=" ' . $is_btn . ' ' . $the_atts['c'] . '" rel="nofollow" href="' . $url . '?ref=' . $the_atts['r'] . '" target="' . $the_atts['t'] . '">' . $content . '</a>';
 	}
 
 	/**
