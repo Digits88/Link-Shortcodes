@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Link Shortcodes
+ * Plugin Name: AA Link Shortcodes
  * Plugin URI: https://github.com/ahmadawais/Link-Shortcodes
  * Description: Adds referral links via shortcodes.
  * Author: mrahmadawais, WPTie
