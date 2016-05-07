@@ -102,8 +102,10 @@ class WP_TF_Shortcodes {
 		        'l' => '/',
 		        't' => '_blank',
 		        'r' => 'WPCouple',
+		        'c' => '',
 		    ), $atts );
 		$url = strtok( $the_atts['l'], '?');
+<<<<<<< HEAD
 		return '<a rel="nofollow" href="' . $url . '?ref=' . $the_atts['r'] . '" target="' . $the_atts['t'] . '">' . $innercontent . '</a>';
 
 		// Building view data object.
@@ -121,6 +123,9 @@ class WP_TF_Shortcodes {
   //       	// }
   //       return ob_get_clean();
 
+=======
+		return '<a class="shortbutton large ' . $the_atts['c'] . '" rel="nofollow" href="' . $url . '?ref=' . $the_atts['r'] . '" target="' . $the_atts['t'] . '">' . $content . '</a>';
+>>>>>>> V1
 	}
 
 	/**
@@ -140,10 +145,37 @@ class WP_TF_Shortcodes {
 	 *
 	 * @since 1.0.0
 	 */
+<<<<<<< HEAD
 	public function mce_button( $buttons ) {
         array_push( $buttons, 'ls_mce_tf_button');
 		return $buttons;
 	}
+=======
+	public function popup() { ?>
+		<div id="my_shortcode_popup" style="display:none;">
+			<!--".wrap" class div is needed to make thickbox content look good-->
+			<div class="wrap">
+				<div>
+					<h2>Envato!</h2>
+					<div class="my_shortcode_add">
+						<div  style="margin:1rem 0;width: 100%">
+							<fieldset>Link:</fieldset>
+							<input id="tf_link" style="padding:1.5rem;width: 100%" /></div>
+						<!-- <div><input id="tf_refarral" value="WPCouple" style="padding:1.5rem;" /></div> -->
+						<div  style="margin:1rem 0;width: 100%">
+							<fieldset>Link Text:</fieldset>
+							<input id="tf_content" value="Demo" style="padding:1.5rem;width: 100%" />
+						</div>
+
+						<div><button class="button-primary" id="id_of_button_clicked">Add Envato Link</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<?php }
+
+>>>>>>> V1
 
 	/**
 	 * Print.
