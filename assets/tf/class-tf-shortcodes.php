@@ -66,7 +66,7 @@ class WP_TF_Shortcodes {
 		        'l' => '/', 		// link.
 		        't' => '_blank',	// target.
 		        'r' => 'WPCouple',	// referral.
-		        'b' => true,			// button
+		        'b' => 'y',			// button
 		        'c' => '',			// button color.
 		    ), $atts );
 
@@ -74,7 +74,9 @@ class WP_TF_Shortcodes {
 		$url = strtok( $the_atts['l'], '?');
 
 		// Is it a button?
-		$is_btn = true == $the_atts['b'] ? 'shortbutton large' : '';
+		$is_btn = ( 'y' == $the_atts['b'] ) ? 'shortbutton large' : '';
+
+		// Return it.
 		return '<a class=" ' . $is_btn . ' ' . $the_atts['c'] . '" rel="nofollow" href="' . $url . '?ref=' . $the_atts['r'] . '" target="' . $the_atts['t'] . '">' . $content . '</a>';
 	}
 
