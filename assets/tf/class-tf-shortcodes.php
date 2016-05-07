@@ -68,7 +68,7 @@ class WP_TF_Shortcodes {
 		        'r' => 'WPCouple',
 		    ), $atts );
 		$url = strtok( $the_atts['l'], '?');
-		return '<a rel="nofollow" href="' . $url . '?ref=' . $the_atts['r'] . '" target="' . $the_atts['t'] . '">' . $content . '</a>';
+		return '<a class="shortbutton large" rel="nofollow" href="' . $url . '?ref=' . $the_atts['r'] . '" target="' . $the_atts['t'] . '">' . $content . '</a>';
 	}
 
 	/**
