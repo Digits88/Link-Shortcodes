@@ -57,7 +57,7 @@ class WP_TF_Shortcodes {
 	 */
 	public function init() {
 		// Backend related stuff
-		add_action( 'admin_init', array( $this, 'init_plugin' ), 20 );
+		// add_action( 'admin_init', array( $this, 'init_plugin' ), 20 );
 
 		// The shortcode.
         add_shortcode( 'tf', array( $this, 'tf_shortcode' ) );
@@ -103,7 +103,8 @@ class WP_TF_Shortcodes {
 		        't' => '_blank',
 		        'r' => 'WPCouple',
 		    ), $atts );
-		return '<a rel="nofollow" href="' . $the_atts['l'] . '?ref=' . $the_atts['r'] . '" target="' . $the_atts['t'] . '">' . $innercontent . '</a>';
+		$url = strtok( $the_atts['l'], '?');
+		return '<a rel="nofollow" href="' . $url . '?ref=' . $the_atts['r'] . '" target="' . $the_atts['t'] . '">' . $innercontent . '</a>';
 
 		// Building view data object.
 	    $the_atts = (object) $the_atts;

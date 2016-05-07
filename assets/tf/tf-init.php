@@ -19,14 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( LS_DIR . '/assets/tf/class-tf-shortcodes.php' ) ) {
-    // require_once( LS_DIR . '/assets/tf/class-tf-shortcodes.php' );
+    require_once( LS_DIR . '/assets/tf/class-tf-shortcodes.php' );
 }
 
-/**
- * DTS Shortcodes.
- *
- * @since 1.0.0
- */
-if ( file_exists( LS_DIR . '/assets/dts/class.shortcode.php' ) ) {
-    require_once( LS_DIR . '/assets/dts/class.shortcode.php' );
-}
